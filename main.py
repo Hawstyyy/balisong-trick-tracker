@@ -32,7 +32,7 @@ class Main:
 
     self.texto(self.root, "Balisong Flipping Tracker", "JetBrains Mono", 32, 0.5, 0.3, "c")
 
-    self.botao(self.root, "Beginner", "JetBrains Mono", 18, 240, 40, "Green", "White", None, 0.3, 0.5, "center")
+    self.botao(self.root, "Beginner", "JetBrains Mono", 18, 240, 40, "Green", "White", None, 0.3, 0.5, "c")
     self.botao(self.root, "Intermediate", "JetBrains Mono", 18, 240, 40, "Orange", "Black",None, 0.5, 0.5, "c")
     self.botao(self.root, "Advanced", "JetBrains Mono", 18, 240, 40, "Yellow", "Black",None, 0.7, 0.5, "c")
 
