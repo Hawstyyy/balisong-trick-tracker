@@ -5,6 +5,7 @@ import os
 import sys
 import webbrowser
 
+
 class Begginer:
     def __init__(self) -> None:
         self.root = ctk.CTkToplevel()
@@ -24,10 +25,10 @@ class Begginer:
         texto = ctk.CTkLabel(master, text=text, font=(font, size))
         texto.place(relx=relx, rely=rely, anchor=anchor)
 
-    def botao(self, master, text, font, size, width, height, color, text_color, command, relx, rely, anchor):
+    def botao(self, master, text, font, size, width, height, color, text_color, command, x, y):
         botao = ctk.CTkButton(master, text=text, width=width, height=height,
                                font=(font, size), fg_color=color, text_color=text_color, command=command)
-        botao.place(relx=relx, rely=rely, anchor=anchor)
+        botao.place(x=x, y=y)
         return botao
 
     def imagem(self, name, master, relx, rely, anchor, x, y):
@@ -37,13 +38,48 @@ class Begginer:
 
     def Start_Begginer(self):
         frame = ctk.CTkScrollableFrame(self.root, width=200, height=200)
-        
-        self.botao(self.root, "Basic opening", "JetBrains Mono", 20, 240, 40, "Blue", "White", lambda: self.abrirTutorial(f"{url[0]}"), 0.2, 0.2, "c")
+        x = 128
+        y = 69
+        for i in range(0, len(url)):
+            print(i)
+            print(f"Adicionando botão: {url[i]['titulo']}")
 
-        self.botao(self.root, "The Fan", "JetBrains Mono", 20, 240, 40, "Blue", "White", lambda: self.abrirTutorial(f"{url[1]}"), 0.45, 0.2, "c")
+            if x >= 656:
+                x = 128
+                y += 60
+            else:
+                x += 264
+    
+            self.botao(self.root, url[i]["titulo"], "JetBrains Mono", 20, 240, 40, "Blue", "White", lambda i=i: self.abrirTutorial(url[i]["link"]), x, y)
 
-        self.botao(self.root, "2 Reverses", "JetBrains Mono", 20, 240, 40, "Blue", "White", lambda: self.abrirTutorial(f"{url[2]}"), 0.68, 0.2, "c")
 
+        # self.botao(self.root, url[1], "JetBrains Mono", 20, 240, 40, "Blue", "White", lambda: self.abrirTutorial(f"{url[1]}"), 392, 69)
+
+        # self.botao(self.root, url[2], "JetBrains Mono", 20, 240, 40, "Blue", "White", lambda: self.abrirTutorial(f"{url[2]}"), 656, 69)
+
+        # self.botao(self.root, url[3], "JetBrains Mono", 20, 240, 40, "Blue", "White", lambda: self.abrirTutorial(f"{url[3]}"), 128, 129)
+
+        # self.botao(self.root, url[4], "JetBrains Mono", 20, 240, 40, "Blue", "White", lambda: self.abrirTutorial(f"{url[4]}"), 392, 129)
+
+        # self.botao(self.root, url[5], "JetBrains Mono", 20, 240, 40, "Blue", "White", lambda: self.abrirTutorial(f"{url[5]}"), 656, 129)
+
+        # self.botao(self.root, url[6], "JetBrains Mono", 20, 240, 40, "Blue", "White", lambda: self.abrirTutorial(f"{url[6]}"), 128, 189)
+
+        # self.botao(self.root, url[7], "JetBrains Mono", 20, 240, 40, "Blue", "White", lambda: self.abrirTutorial(f"{url[7]}"), 392, 189)
+
+        # self.botao(self.root, url[8], "JetBrains Mono", 20, 240, 40, "Blue", "White", lambda: self.abrirTutorial(f"{url[8]}"), 656, 189)
+
+        # self.botao(self.root, url[9], "JetBrains Mono", 20, 240, 40, "Blue", "White", lambda: self.abrirTutorial(f"{url[9]}"), 128, 249)
+
+        # self.botao(self.root, url[10], "JetBrains Mono", 20, 240, 40, "Blue", "White", lambda: self.abrirTutorial(f"{url[10]}"), 392, 249)
+
+        # self.botao(self.root, url[11], "JetBrains Mono", 20, 240, 40, "Blue", "White", lambda: self.abrirTutorial(f"{url[11]}"), 656, 249)
+
+        # self.botao(self.root, url[12], "JetBrains Mono", 20, 240, 40, "Blue", "White", lambda: self.abrirTutorial(f"{url[12]}"), 128, 309)
+
+        # self.botao(self.root, url[13], "JetBrains Mono", 20, 240, 40, "Blue", "White", lambda: self.abrirTutorial(f"{url[13]}"), 392, 309)
+
+        # self.botao(self.root, url[14], "JetBrains Mono", 20, 240, 40, "Blue", "White", lambda: self.abrirTutorial(f"{url[14]}"), 656, 309)
 
 
         self.root.mainloop()
