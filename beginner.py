@@ -37,20 +37,19 @@ class Begginer:
         imagem_place.place(relx=relx, rely=rely, anchor=anchor)
 
     def Start_Begginer(self):
-        frame = ctk.CTkScrollableFrame(self.root, width=200, height=200)
+        frame = ctk.CTkScrollableFrame(self.root, width=1000, height=620)
+        frame.place(relx=0.5, rely=0.5, anchor='c')
         x = 128
         y = 69
         for i in range(0, len(url)):
-            print(i)
-            print(f"Adicionando botão: {url[i]['titulo']}")
-
-            if x >= 656:
+            if x >= 656 or i == 0:
                 x = 128
-                y += 60
+                if i != 0:
+                    y += 60
             else:
                 x += 264
     
-            self.botao(self.root, url[i]["titulo"], "JetBrains Mono", 20, 240, 40, "Blue", "White", lambda i=i: self.abrirTutorial(url[i]["link"]), x, y)
+            self.botao(frame, url[i]["titulo"], "JetBrains Mono", 20, 240, 40, "Blue", "White", lambda i=i: self.abrirTutorial(url[i]["link"]), x, y)
 
 
         # self.botao(self.root, url[1], "JetBrains Mono", 20, 240, 40, "Blue", "White", lambda: self.abrirTutorial(f"{url[1]}"), 392, 69)
