@@ -13,6 +13,8 @@ class Begginer:
         self.root.resizable(False, False)
         self.root.title("Balisong Flipping Tracker")
         self.root.iconbitmap(f"{self.basePath()}/logo.ico")
+        self.frame = ctk.CTkScrollableFrame(self.root, width=1000, height=620)
+        self.frame.place(relx=0.5, rely=0.5, anchor='c')
 
     def abrirTutorial(self, link):
         url = link
@@ -37,8 +39,7 @@ class Begginer:
         imagem_place.place(relx=relx, rely=rely, anchor=anchor)
 
     def Start_Begginer(self):
-        frame = ctk.CTkScrollableFrame(self.root, width=1000, height=620)
-        frame.place(relx=0.5, rely=0.5, anchor='c')
+
         x = 128
         y = 69
         for i in range(0, len(url)):
@@ -49,37 +50,7 @@ class Begginer:
             else:
                 x += 264
     
-            self.botao(frame, url[i]["titulo"], "JetBrains Mono", 20, 240, 40, "Blue", "White", lambda i=i: self.abrirTutorial(url[i]["link"]), x, y)
-
-
-        # self.botao(self.root, url[1], "JetBrains Mono", 20, 240, 40, "Blue", "White", lambda: self.abrirTutorial(f"{url[1]}"), 392, 69)
-
-        # self.botao(self.root, url[2], "JetBrains Mono", 20, 240, 40, "Blue", "White", lambda: self.abrirTutorial(f"{url[2]}"), 656, 69)
-
-        # self.botao(self.root, url[3], "JetBrains Mono", 20, 240, 40, "Blue", "White", lambda: self.abrirTutorial(f"{url[3]}"), 128, 129)
-
-        # self.botao(self.root, url[4], "JetBrains Mono", 20, 240, 40, "Blue", "White", lambda: self.abrirTutorial(f"{url[4]}"), 392, 129)
-
-        # self.botao(self.root, url[5], "JetBrains Mono", 20, 240, 40, "Blue", "White", lambda: self.abrirTutorial(f"{url[5]}"), 656, 129)
-
-        # self.botao(self.root, url[6], "JetBrains Mono", 20, 240, 40, "Blue", "White", lambda: self.abrirTutorial(f"{url[6]}"), 128, 189)
-
-        # self.botao(self.root, url[7], "JetBrains Mono", 20, 240, 40, "Blue", "White", lambda: self.abrirTutorial(f"{url[7]}"), 392, 189)
-
-        # self.botao(self.root, url[8], "JetBrains Mono", 20, 240, 40, "Blue", "White", lambda: self.abrirTutorial(f"{url[8]}"), 656, 189)
-
-        # self.botao(self.root, url[9], "JetBrains Mono", 20, 240, 40, "Blue", "White", lambda: self.abrirTutorial(f"{url[9]}"), 128, 249)
-
-        # self.botao(self.root, url[10], "JetBrains Mono", 20, 240, 40, "Blue", "White", lambda: self.abrirTutorial(f"{url[10]}"), 392, 249)
-
-        # self.botao(self.root, url[11], "JetBrains Mono", 20, 240, 40, "Blue", "White", lambda: self.abrirTutorial(f"{url[11]}"), 656, 249)
-
-        # self.botao(self.root, url[12], "JetBrains Mono", 20, 240, 40, "Blue", "White", lambda: self.abrirTutorial(f"{url[12]}"), 128, 309)
-
-        # self.botao(self.root, url[13], "JetBrains Mono", 20, 240, 40, "Blue", "White", lambda: self.abrirTutorial(f"{url[13]}"), 392, 309)
-
-        # self.botao(self.root, url[14], "JetBrains Mono", 20, 240, 40, "Blue", "White", lambda: self.abrirTutorial(f"{url[14]}"), 656, 309)
-
+            self.botao(self.frame, url[i]["titulo"], "JetBrains Mono", 20, 240, 40, "Blue", "White", lambda i=i: self.abrirTutorial(url[i]["link"]), x, y)
 
         self.root.mainloop()
 
